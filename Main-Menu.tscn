@@ -1,0 +1,132 @@
+[gd_scene load_steps=10 format=3 uid="uid://c60caq6sisi2d"]
+
+[ext_resource type="Script" uid="uid://f81thovc4wij" path="res://main_menu.gd" id="1_aqwir"]
+[ext_resource type="Texture2D" uid="uid://c8fbuvtgwjei3" path="res://Photos/OIP (4).jpg" id="1_jlh7t"]
+[ext_resource type="FontFile" uid="uid://derih55mrgcfd" path="res://Photos/ari_w9500/ari-w9500-bold.ttf" id="2_gewly"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rm4s4"]
+texture = ExtResource("1_jlh7t")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81sh7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqwir"]
+bg_color = Color(0.175686, 0.447904, 0.121774, 1)
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81sh7"]
+bg_color = Color(0.104176, 0.288786, 0.0678072, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm4s4"]
+bg_color = Color(0.235294, 0.588235, 0.164706, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aqwir"]
+
+[node name="Main-menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aqwir")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 573.0
+offset_bottom = 322.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rm4s4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -161.0
+offset_right = 338.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -100
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.974427, 0.96881, 0.956858, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_81sh7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aqwir")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_81sh7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rm4s4")
+text = "Play"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.974427, 0.96881, 0.956858, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_81sh7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aqwir")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_81sh7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rm4s4")
+text = "Settings"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.974427, 0.96881, 0.956858, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aqwir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aqwir")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_81sh7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rm4s4")
+text = "Exit
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -268.0
+offset_right = 246.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_gewly")
+theme_override_font_sizes/font_size = 82
+text = "Game Name"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_settings_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_2_pressed"]
